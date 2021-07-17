@@ -77,6 +77,10 @@ func (g *StandardClient) GetLocationForIp(ip string) (*Location, error) {
 	return getLocation(uri, g.HttpClient)
 }
 
+func (g *StandardClient) Close() {
+
+}
+
 func getLocation(uri string, httpClient *http.Client) (*Location, error) {
 	resp, err := httpClient.Get(uri)
 	if err != nil {
