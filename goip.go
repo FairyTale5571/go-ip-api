@@ -78,7 +78,7 @@ func (g *StandardClient) GetLocationForIp(ip string) (*Location, error) {
 }
 
 func (g *Location) Close() {
-	g = nil
+	g = &Location{}
 }
 
 func getLocation(uri string, httpClient *http.Client) (*Location, error) {
